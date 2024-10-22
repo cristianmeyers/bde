@@ -7,10 +7,15 @@
 
 :root {
   --main-color-text: black;
+  --card-lineal-gradient: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 4%,
+    rgba(0, 0, 0, 0) 37%
+  );
 }
 
 body {
-  font-family: "Roboto", sans-serif; /* Aplica la fuente a todo el cuerpo */
+  font-family: "Nunito", sans-serif; /* Aplicar Nunito como fuente principal */
   width: 100%;
 }
 
@@ -189,11 +194,12 @@ nav.show {
   }
 }
 /*=======================  hero  ==========================*/
+/* General layout for the hero section */
 .hero {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 3vh;
+  grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+  grid-template-rows: repeat(2, 1fr); /* Dos filas iguales */
+  gap: 3vh; /* Espacio entre tarjetas */
   width: 60%;
   margin: auto;
   padding-top: 100px;
@@ -201,28 +207,89 @@ nav.show {
 }
 
 /* Estilos generales para todas las tarjetas */
+/* Estilos generales para todas las tarjetas */
 .cards {
-  background-color: #ddd;
+  position: relative; /* Necesario para el posicionamiento */
   border-radius: 10px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
+  justify-content: flex-start; /* Alinear el contenido a la izquierda */
+  align-items: flex-end; /* Alinear el contenido al fondo */
+  text-align: left;
+  padding: 20px;
+  height: 280px;
   background-size: cover;
+  background-repeat: no-repeat; /* Asegúrate de que la imagen de fondo cubra toda la tarjeta */
   background-position: center;
+  transition: background-size 0.8s ease-out; /* Transición para el cambio de tamaño de fondo */
+  overflow: hidden; /* Asegúrate de que el contenido no sobresalga */
 }
 
-/* Estilos específicos para cada tarjeta (con imágenes de fondo) */
+/* Efecto hover para la tarjeta */
+.cards:hover {
+  background-size: 110%; /* Aumenta el tamaño de la imagen de fondo al hacer hover */
+}
+
+/* Pseudo-elemento para el degradado */
+.cards::before {
+  content: ""; /* Necesario para el pseudo-elemento */
+  position: absolute; /* Posicionar absolutamente */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--card-lineal-gradient); /* Degradado */
+  border-radius: 10px; /* Asegúrate de que coincida con el border-radius de la tarjeta */
+  z-index: 1; /* Debe estar por encima de la tarjeta, pero debajo del contenido */
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espaciado entre los elementos */
+  align-items: flex-start; /* Alinea el contenido a la izquierda */
+  text-align: left;
+  color: white;
+  z-index: 2; /* Asegúrate de que el contenido esté por encima del degradado */
+}
+
+.tag {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para resaltar el tag */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8); /* Texto gris claro para la fecha */
+}
+
+/* Estilos específicos para cada tarjeta */
 .card-1 {
   grid-column: 1 / 3;
   grid-row: 1 / 3;
   background-image: url("../../assets/images/blog/1by1/01.jpg");
   height: 100%;
+  div h2 {
+    font-size: 50px;
+  }
 }
 
 .card-2 {
   grid-column: 3 / 5;
-  grid-row: 1 /2;
+  grid-row: 1 / 2;
   background-image: url("../../assets/images/blog/1by1/02.jpg");
 }
 
