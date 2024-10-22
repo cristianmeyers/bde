@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Educational blog where students share questions, polls, and news.">
+    <meta name="author" content="Cristian Meyers">
+    <meta name="keywords" content="Blog, Education, BDE, Students, News">
+    <title>Vlog Éducatif du BDE</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/test.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.css">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <header>
+        <!--===================================================== Navbar  ==================-->
+
+        <nav class="navbar" aria-label="Main Navigation">
+            <!--================== Navbar pc  ==================-->
+            <a target="_blank" href="https://polebtsalternance.fr" class="navbar__brand" title="Pole BTS Alternance">
+                <img class="logo" alt="Pole BTS Alternance" src="assets/images/logos-blanc-PBA.png" />
+            </a>
+            <div class="navbar__pc">
+                <ul class="navbar__list" id="navlist">
+                    <li class="nav-item"><a href="/" class="nav-link" title="Go to Home">Home</a></li>
+                    <li class="nav-item"><a href="/about" class="nav-link" title="Learn more about us">About</a></li>
+                    <li class="nav-item"><a href="/services" class="nav-link" title="See our services">Services</a></li>
+                    <li class="nav-item"><a href="/blog" class="nav-link" title="Read our blog">Blog</a></li>
+                    <li class="nav-item"><a href="/contact" class="nav-link" title="Contact us">Contact</a></li>
+                </ul>
+            </div>
+            <!--================== boutton dark mode  ==================-->
+
+            <!--================== Sidebar for mobile ==================-->
+            <div class="mobile_nav">
+                <div class="hamburger-icon" id="icon">
+                    <div class="icon-1" id="a"></div>
+                    <div class="icon-2" id="b"></div>
+                    <div class="icon-3" id="c"></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!--================== Main Content ==================-->
+    <main class="wrapper">
+        <section id="hero" class="hero">
+            <div class="cards card-1"></div>
+            <div class="cards card-2"></div>
+            <div class="cards card-3"></div>
+            <div class="cards card-4"></div>
+        </section>
+
+
+
+        <section id="categories" class="mb-5">
+            <h2>Categories</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Category 1</h5>
+                            <p class="card-text">Description of Category 1</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Category 2</h5>
+                            <p class="card-text">Description of Category 2</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Category 3</h5>
+                            <p class="card-text">Description of Category 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="polls" class="mb-5">
+            <h2>Polls</h2>
+            <p>Participate in our latest polls!</p>
+            <div id="polls-container" class="row">
+                <!-- Polls will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <!--================== Footer ==================-->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>About the Blog</h5>
+                    <p>This is an educational blog for students to share ideas, polls, and news. Join our community
+                        today!</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Contact</h5>
+                    <p>Email: contact@vlogeducatif.com</p>
+                    <p>Phone: +123 456 7890</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/test.js"></script>
+</body>
+
+</html>

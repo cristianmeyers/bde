@@ -1,0 +1,237 @@
+/* General styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-color-text: black;
+}
+
+body {
+  font-family: "Roboto", sans-serif; /* Aplica la fuente a todo el cuerpo */
+  width: 100%;
+}
+
+/*==================== logo ==============*/
+.logo {
+  width: 100px;
+  border: solid 2px black;
+  border-radius: 15px;
+  background-color: black;
+  display: block; /* Para que se centre en el contenedor */
+  margin: 0 auto; /* Centra el logo horizontalmente */
+}
+
+/*=================== Navbar ================*/
+.navbar {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between; /* Centra el contenido de la navbar */
+  background-color: rgb(
+    28,
+    224,
+    10
+  ); /* Asegúrate de que la navbar tenga un fondo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional para efecto */
+  z-index: 1000; /* Asegúrate de que esté por encima de otro contenido */
+  padding: 10px 10px;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/*=================== Desktop Navbar ================*/
+.navbar__pc {
+  display: flex;
+  justify-content: center; /* Centra los elementos de la navbar */
+  width: 100%; /* Asegúrate de que ocupe todo el ancho */
+}
+
+.navbar__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0; /* Elimina el padding por defecto de la lista */
+  gap: 25px;
+  margin: 0 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--main-color-text);
+  transition: color 0.3s; /* Transición suave al pasar el mouse */
+}
+
+.nav-link:hover {
+  color: gray; /* Cambia el color al pasar el mouse */
+}
+
+/*=============================== switch =======================*/
+
+.icon-1,
+.icon-2,
+.icon-3 {
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 17px;
+  height: 2px;
+  background-color: black;
+  transition: all 400ms cubic-bezier(0.84, 0.06, 0.52, 1.8);
+}
+
+.icon-1 {
+  transform: translateY(-5px);
+  animation-delay: 100ms;
+}
+
+.icon-3 {
+  transform: translateY(5px);
+  animation-delay: 250ms;
+}
+
+.hamburger-icon {
+  position: relative; /* Posiciona el contenedor para permitir el posicionamiento absoluto de los íconos */
+  height: 30px; /* Altura del botón */
+  width: 30px; /* Ancho del botón */
+  z-index: 1000; /* Mantiene el botón en la parte superior */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  border-radius: 50%; /* Hace que el botón sea circular */
+  transition: all 0.2s ease-in-out; /* Transiciones suaves para hover */
+  background: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente */
+  display: flex; /* Utiliza flexbox para centrar los elementos */
+  justify-content: center; /* Centra horizontalmente los elementos hijos */
+  align-items: center; /* Centra verticalmente los elementos hijos */
+}
+
+/* Efecto hover para el ícono de hamburguesa */
+.hamburger-icon:hover {
+  transform: scale(1.2); /* Aumenta ligeramente el tamaño al pasar el ratón */
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+}
+
+.icon-1.a {
+  transform: rotate(40deg);
+}
+.icon-3.b {
+  transform: rotate(-40deg);
+}
+.icon-2.c {
+  opacity: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+@keyframes slideIn {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+
+  100% {
+    width: 50%;
+    opacity: 1;
+  }
+}
+
+nav.show {
+  width: 50%;
+
+  opacity: 1;
+}
+
+@keyframes shotup {
+  0% {
+    transform: translateY(300%);
+    opacity: 0;
+  }
+  90% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+/*=========================================================*/
+/*=================== Mobile Navbar ================*/
+.mobile_nav {
+  display: none; /* Oculto por defecto */
+  cursor: pointer;
+  justify-content: center; /* Centra el icono */
+  align-items: center;
+}
+
+.mobile_nav i {
+  font-size: 24px; /* Ajusta el tamaño del icono */
+}
+
+/*=================== Media Queries ================*/
+@media (max-width: 768px) {
+  .mobile_nav {
+    display: flex; /* Cambia a flex para centrar */
+    justify-content: center; /* Centra el icono */
+  }
+
+  .navbar__pc {
+    display: none; /* Oculto en móviles */
+  }
+  .switch {
+    display: none;
+  }
+}
+/*=======================  hero  ==========================*/
+.hero {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3vh;
+  width: 60%;
+  margin: auto;
+  padding-top: 100px;
+  background-color: #f0f0f0;
+}
+
+/* Estilos generales para todas las tarjetas */
+.cards {
+  background-color: #ddd;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Estilos específicos para cada tarjeta (con imágenes de fondo) */
+.card-1 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  background-image: url("../../assets/images/blog/1by1/01.jpg");
+  height: 100%;
+}
+
+.card-2 {
+  grid-column: 3 / 5;
+  grid-row: 1 /2;
+  background-image: url("../../assets/images/blog/1by1/02.jpg");
+}
+
+.card-3 {
+  grid-column-start: 3;
+  background-image: url("../../assets/images/blog/1by1/03.jpg");
+}
+
+.card-4 {
+  grid-column-start: 4;
+  background-image: url("../../assets/images/blog/1by1/04.jpg");
+}
