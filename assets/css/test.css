@@ -18,22 +18,29 @@ body {
   font-family: "Nunito", sans-serif; /* Aplicar Nunito como fuente principal */
   width: 100%;
 }
-
-/*==================== logo ==============*/
-.logo {
-  width: 100px;
-  border: solid 2px black;
-  border-radius: 15px;
-  background-color: black;
-  display: block; /* Para que se centre en el contenedor */
-  margin: 0 auto; /* Centra el logo horizontalmente */
+section,
+footer,
+main {
+  margin: 3vw; /* Ajusta el valor según sea necesario */
+  width: 100%;
+  max-width: 1150px;
+  margin: auto;
+  margin-top: 5vh;
 }
+
+header {
+  max-width: 1150px; /* Ajusta este valor según tus necesidades */
+  margin: 0 auto; /* Centra el header horizontalmente */
+  background-color: #fff; /* Color de fondo del header, ajusta según sea necesario */
+}
+
+/* Asegúrate de que la navbar se ajuste al contenedor del header */
 
 /*=================== Navbar ================*/
 .navbar {
-  width: 100%;
-  position: fixed;
   display: flex;
+  align-items: center; /* Alinea verticalmente los elementos en el centro */
+  width: 100%; /* Asegura que la navbar ocupe todo el ancho disponible */
   justify-content: space-between; /* Centra el contenido de la navbar */
   background-color: rgb(
     28,
@@ -48,6 +55,16 @@ body {
     justify-content: center;
     align-items: center;
   }
+  border-radius: 0 0 10px 10px;
+}
+/*==================== logo ==============*/
+.logo {
+  width: 100px;
+  border: solid 2px black;
+  border-radius: 15px;
+  background-color: black;
+  display: block; /* Para que se centre en el contenedor */
+  margin: 0 auto; /* Centra el logo horizontalmente */
 }
 
 /*=================== Desktop Navbar ================*/
@@ -193,6 +210,48 @@ nav.show {
     display: none;
   }
 }
+
+/*================================ carrousel ===========================================*/
+
+.text-carousel {
+  width: 100%; /* Ancho completo */
+  max-width: 1150px;
+  margin: auto;
+  overflow: hidden; /* Oculta el texto que sale del contenedor */
+  background-color: #e8effd; /* Cambia el color de fondo si lo prefieres */
+  color: #595d69; /* Color del texto */
+  padding: 10px 0; /* Espaciado vertical */
+  position: relative; /* Posicionarlo debajo del nav */
+  border-radius: 10px;
+  margin-top: 3vh;
+}
+
+.text-carousel p {
+  display: inline-block;
+  white-space: nowrap; /* Evita que el texto haga salto de línea */
+  animation: scroll-text 15s linear infinite; /* Animación de scroll continua */
+}
+
+.text-carousel span {
+  padding-right: 50px; /* Espaciado entre las frases */
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(
+      100%
+    ); /* Empieza fuera de la pantalla por la derecha */
+  }
+  100% {
+    transform: translateX(
+      -100%
+    ); /* Desplaza todo el texto hacia la izquierda */
+  }
+}
+.text-carousel:hover p {
+  animation-play-state: paused; /* Pausa la animación cuando se hace hover */
+}
+
 /*=======================  hero  ==========================*/
 /* General layout for the hero section */
 .hero {
@@ -200,33 +259,35 @@ nav.show {
   grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
   grid-template-rows: repeat(2, 1fr); /* Dos filas iguales */
   gap: 3vh; /* Espacio entre tarjetas */
-  width: 60%;
-  margin: auto;
-  padding-top: 100px;
-  background-color: #f0f0f0;
 }
 
-/* Estilos generales para todas las tarjetas */
-/* Estilos generales para todas las tarjetas */
+/*======================================================================  Estilos generales para todas las tarjetas */
 .cards {
-  position: relative; /* Necesario para el posicionamiento */
+  position: relative; /* Para posicionar los elementos dentro */
   border-radius: 10px;
   display: flex;
-  justify-content: flex-start; /* Alinear el contenido a la izquierda */
-  align-items: flex-end; /* Alinear el contenido al fondo */
+  justify-content: flex-start;
+  align-items: flex-end;
   text-align: left;
   padding: 20px;
   height: 280px;
-  background-size: 100%;
-  background-repeat: no-repeat; /* Asegúrate de que la imagen de fondo cubra toda la tarjeta */
-  background-position: center;
-  transition: background-size 0.8s ease-out; /* Transición para el cambio de tamaño de fondo */
-  overflow: hidden; /* Asegúrate de que el contenido no sobresalga */
+  overflow: hidden;
 }
 
-/* Efecto hover para la tarjeta */
-.cards:hover {
-  background-size: 110%; /* Aumenta el tamaño de la imagen de fondo al hacer hover */
+.background-img {
+  position: absolute;
+  top: 50%; /* Centrar verticalmente */
+  left: 50%; /* Centrar horizontalmente */
+  width: 100%; /* Asegúrate de que la imagen cubra el contenedor */
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%); /* Centrar la imagen */
+  transition: transform 0.5s ease; /* Añadir transición para el efecto de zoom */
+  z-index: 0; /* Asegura que la imagen esté detrás del contenido */
+}
+
+.cards:hover .background-img {
+  transform: translate(-50%, -50%) scale(1.1); /* Aumenta el tamaño de la imagen al hacer hover */
 }
 
 /* Pseudo-elemento para el degradado */
@@ -243,27 +304,57 @@ nav.show {
 }
 
 .card-content {
+  position: relative;
+  z-index: 2; /* Asegura que el contenido esté por encima de la imagen */
+  color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Espaciado entre los elementos */
-  align-items: flex-start; /* Alinea el contenido a la izquierda */
-  text-align: left;
-  color: white;
-  z-index: 2; /* Asegúrate de que el contenido esté por encima del degradado */
+  justify-content: flex-end;
 }
 
 .tag {
-  display: inline-block;
+  display: inline-block; /* Asegúrate de que el tag sea inline-block */
   background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para resaltar el tag */
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 0.8rem;
-  margin-bottom: 10px;
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 10px; /* Espaciado alrededor del texto */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 0.8rem; /* Tamaño de fuente para el tag */
+  margin-bottom: 10px; /* Margen inferior para separar del contenido */
+  max-width: fit-content; /* Ajusta el ancho al contenido */
+  z-index: 10;
+  cursor: pointer;
 }
 
 .title {
+  position: relative; /* Para que el pseudo-elemento se posicione respecto al título */
   font-size: 1.5rem;
   margin-bottom: 10px;
+}
+
+.underline {
+  position: relative; /* Para el pseudo-elemento de subrayado */
+  display: inline-block; /* Permite que el pseudo-elemento se ajuste al tamaño del texto */
+}
+
+.underline::after {
+  content: ""; /* Necesario para el pseudo-elemento */
+  position: absolute; /* Posicionamiento absoluto */
+  left: 0; /* Empieza desde el inicio */
+  bottom: 0; /* Se alinea en la parte inferior del texto */
+  width: 100%; /* El subrayado cubre el ancho del texto */
+  height: 2px; /* Altura del subrayado */
+  background: white; /* Color del subrayado */
+  transform: scale(0); /* Empieza fuera con un tamano 0 */
+  transform-origin: bottom right; /* se dirige acia la derecha inferior */
+  transition: transform 0.4s ease; /* Transición suave para el efecto */
+}
+
+.cards:hover .underline::after {
+  transform: scale(
+    1
+  ); /* Al hacer hover, el subrayado toma su tamano original */
+  transform-origin: bottom left;
 }
 
 .description {
@@ -280,7 +371,6 @@ nav.show {
 .card-1 {
   grid-column: 1 / 3;
   grid-row: 1 / 3;
-  background-image: url("../../assets/images/blog/1by1/01.jpg");
   height: 100%;
   div h2 {
     font-size: 50px;
@@ -290,76 +380,15 @@ nav.show {
 .card-2 {
   grid-column: 3 / 5;
   grid-row: 1 / 2;
-  background-image: url("../../assets/images/blog/1by1/02.jpg");
 }
 
 .card-3 {
   grid-column-start: 3;
-  background-image: url("../../assets/images/blog/1by1/03.jpg");
 }
 
 .card-4 {
   grid-column-start: 4;
-  background-image: url("../../assets/images/blog/1by1/04.jpg");
 }
-/*================================================================================== test=====================================================*/
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-}
-
-/* Estilo de las tarjetas */
-.card {
-  position: relative;
-  border-radius: 10px;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 20px;
-  overflow: hidden;
-  transition: background-size 0.3s ease-in-out;
-}
-
-.card-large {
-  grid-column: span 2;
-  height: 400px;
-}
-
-/* Animación de zoom en hover */
-.card:hover {
-  background-size: 110%;
-}
-
-/* Contenido de la tarjeta */
-.card-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-}
-
-/* Tag o categoría */
-.badge {
-  display: inline-block;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 0.8rem;
-  margin-bottom: 10px;
-}
-
-/* Diferentes colores para cada tag */
 .tag-lifestyle {
   background-color: #d6293e;
 }
@@ -371,19 +400,67 @@ nav.show {
 .tag-business {
   background-color: #2163e8;
 }
-
-/* Título y descripción */
-.title {
-  font-size: 1.5rem;
+/*=====================================================================================================================*/
+/*================================================== second section ======================================================*/
+.posts {
+  height: auto;
+  display: grid;
+  grid-template-columns: 70% auto;
+  gap: 3vh;
+}
+.posts_cards {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 3vh;
+}
+.posts_aside {
+  border: black 2px solid;
+}
+.blogs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3vh;
+}
+.blogs_cards {
+  width: 100%;
+  height: auto;
+}
+.blog_poster {
+  position: relative; /* Para posicionar los elementos dentro */
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-align: left;
+  padding: 20px;
+  height: 280px;
+  overflow: hidden;
   margin-bottom: 10px;
 }
 
-.description {
-  font-size: 1rem;
-  margin-bottom: 10px;
+.blog_poster img {
+  position: absolute;
+  top: 50%; /* Centrar verticalmente */
+  left: 50%; /* Centrar horizontalmente */
+  width: 100%; /* Asegúrate de que la imagen cubra el contenedor */
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%); /* Centrar la imagen */
+  transition: transform 0.5s ease; /* Añadir transición para el efecto de zoom */
+  z-index: 0; /* Asegura que la imagen esté detrás del contenido */
+}
+.blog_poster img:hover {
+  transform: translate(-50%, -50%) scale(1.1); /* Aumenta el tamaño de la imagen al hacer hover */
 }
 
-.date {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.8);
+.blogs_cards .title:hover .underline::after {
+  background-color: black;
+  transform: scale(
+    1
+  ); /* Al hacer hover, el subrayado toma su tamano original */
+  transform-origin: bottom left;
+}
+.date2 {
+  color: #595d69;
 }

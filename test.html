@@ -20,7 +20,7 @@
 <body>
 
 
-    <header>
+    <header class="no-padding">
         <!--===================================================== Navbar  ==================-->
 
         <nav class="navbar" aria-label="Main Navigation">
@@ -51,82 +51,247 @@
 
         </nav>
     </header>
-
+    <!--=================================== caroussel =================================-->
+    <div class="text-carousel">
+        <p>
+            <span>¡Bienvenido a nuestra página web! &nbsp; </span>
+            <span>Últimas actualizaciones en tecnología &nbsp; </span>
+            <span>Cyberseguridad: aprende a proteger tus datos &nbsp; </span>
+            <span>Descubre nuestras últimas publicaciones &nbsp; </span>
+        </p>
+    </div>
 
     <!--======================================================================================= Main Content ==================-->
 
     <main class="wrapper">
         <!--===================== card intro =======================-->
+
+        <!--============== forma
+
+            <div class="cards card-1">
+                <img class="background-img" src="a" alt="">
+                <div class="card-content">
+                    <span class="tag tag-#"></span>
+                    <h2 class="title"></h2>
+                    <p class="description"></p>
+                    <span class="date"></span>
+                </div>
+            </div>
+        ================== Forma
+        -->
+
+
+
         <section id="hero" class="hero">
             <div class="cards card-1">
+                <img class="background-img" src="assets/images/blog/1by1/01.jpg" alt="">
                 <div class="card-content">
-                    <span class="tag tag-business">Soirée</span>
-                    <h2 class="title">Evento de Noche</h2>
+                    <span class="tag tag-business">
+                        <i class="fa-solid fa-tag"></i>
+                        Soirée
+                    </span>
+                    <h2 class="title"><span class="underline">Evento de Noche</span></h2>
                     <p class="description">Una descripción ligera de lo que ocurrió durante la soirée.</p>
                     <span class="date">Publicado el: 22 Oct 2024</span>
                 </div>
             </div>
+
             <div class="cards card-2">
+                <img class="background-img" src="assets/images/blog/1by1/02.jpg" alt="">
                 <div class="card-content">
-                    <span class="tag tag-business">Conferencia</span>
-                    <h2 class="title">Conferencia de Seguridad</h2>
+                    <span class="tag tag-business">
+                        <i class="fa-solid fa-tag"></i>
+                        Conferencia
+                    </span>
+                    <h2 class="title"><span class="underline">Conferencia de Seguridad</span></h2>
                     <p class="description">Descripción breve sobre los temas discutidos.</p>
                     <span class="date">Publicado el: 15 Oct 2024</span>
                 </div>
             </div>
+
             <div class="cards card-3">
+                <img class="background-img" src="assets/images/blog/1by1/03.jpg" alt="">
                 <div class="card-content">
-                    <span class="tag tag-technology">Workshop</span>
-                    <h2 class="title">Taller de Desarrollo Web</h2>
+                    <span class="tag tag-technology">
+                        <i class="fa-solid fa-tag"></i>
+                        Workshop
+                    </span>
+                    <h2 class="title"><span class="underline">Taller de Desarrollo Web</span></h2>
                     <p class="description">Introducción a herramientas de desarrollo moderno.</p>
                     <span class="date">Publicado el: 10 Oct 2024</span>
                 </div>
             </div>
+
             <div class="cards card-4">
+                <img class="background-img" src="assets/images/blog/1by1/04.jpg" alt="">
                 <div class="card-content">
-                    <span class="tag tag-lifestyle">Meetup</span>
-                    <h2 class="title">Reunión de Desarrolladores</h2>
+                    <span class="tag tag-lifestyle">
+                        <i class="fa-solid fa-tag"></i>
+                        Meetup
+                    </span>
+                    <h2 class="title"><span class="underline">Reunión de Desarrolladores</span></h2>
                     <p class="description">Discutiendo nuevas tendencias en desarrollo.</p>
                     <span class="date">Publicado el: 5 Oct 2024</span>
                 </div>
             </div>
+
         </section>
-        <!--=========================================================-->>
+
+        <!--=========================================================-->
 
         <!--=================================== first section test=====================-->
 
 
-        <!--=================================== first section test=====================-->
+        <!--=================================== second section test=====================-->
 
-        <section id="polls" class="mb-5">
-            <h2>Polls</h2>
-            <p>Participate in our latest polls!</p>
-            <div id="polls-container" class="row">
-                <!-- Polls will be dynamically loaded here -->
-            </div>
+        <section class="posts">
+            <!-- cards main content post -->
+            <article class="posts_cards">
+                <h2><i class="fa-regular fa-hourglass-half"></i> Today's top highlights</h2>
+                <div class="blogs">
+
+                    <!-- card 1-->
+                    <div class="blogs_cards">
+                        <div class="blog_poster">
+                            <img src="assets/images/blog/4by3/01.jpg" alt="">
+                            <span class="tag tag-lifestyle">
+                                <i class="fa-solid fa-tag"></i>
+                                Meetup
+                            </span>
+                        </div>
+                        <h2 class="title">
+                            <span class="underline">12 worst types of business accounts you follow on Twitter
+                            </span>
+                        </h2>
+                        <p class="description">
+                            He moonlights difficult engrossed it, sportsmen. Interested has all
+                            Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to
+                        </p>
+                        <span class="date date2">Jan 22, 2022</span>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="blogs_cards">
+                        <div class="blog_poster">
+                            <img src="assets/images/blog/4by3/03.jpg" alt="">
+                            <span class="tag tag-lifestyle">
+                                <i class="fa-solid fa-tag"></i>
+                                Travel
+                            </span>
+                        </div>
+                        <h2 class="title">
+                            <span class="underline">12 worst types of business accounts you follow on Twitter
+                            </span>
+                        </h2>
+                        <p class="description">
+                            He moonlights difficult engrossed it, sportsmen. Interested has all
+                            Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to
+                        </p>
+                        <span class="date date2">Jan 22, 2022</span>
+                    </div>
+                    <!-- card 3 -->
+                    <div class="blogs_cards">
+                        <div class="blog_poster">
+                            <img src="assets/images/blog/4by3/04.jpg" alt="">
+                            <span class="tag tag-business">
+                                <i class="fa-solid fa-tag"></i>
+                                Business
+                            </span>
+                        </div>
+                        <h2 class="title">
+                            <span class="underline">12 worst types of business accounts you follow on Twitter
+                            </span>
+                        </h2>
+                        <p class="description">
+                            He moonlights difficult engrossed it, sportsmen. Interested has all
+                            Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to
+                        </p>
+                        <span class="date date2">Jan 22, 2022</span>
+                    </div>
+                    <!-- card 4 -->
+                    <div class="blogs_cards">
+                        <div class="blog_poster">
+                            <img src="assets/images/blog/4by3/05.jpg" alt="">
+                            <span class="tag tag-technology ">
+                                <i class="fa-solid fa-tag"></i>
+                                Technology
+                            </span>
+                        </div>
+                        <h2 class="title">
+                            <span class="underline">12 worst types of business accounts you follow on Twitter
+                            </span>
+                        </h2>
+                        <p class="description">
+                            He moonlights difficult engrossed it, sportsmen. Interested has all
+                            Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to
+                        </p>
+                        <span class="date date2">Jan 22, 2022</span>
+                    </div>
+                    <!-- card 5 -->
+                    <div class="blogs_cards">
+                        <div class="blog_poster">
+                            <img src="assets/images/blog/4by3/04.jpg" alt="">
+                            <span class="tag tag-business">
+                                <i class="fa-solid fa-tag"></i>
+                                Business
+                            </span>
+                        </div>
+                        <h2 class="title">
+                            <span class="underline">12 worst types of business accounts you follow on Twitter
+                            </span>
+                        </h2>
+                        <p class="description">
+                            He moonlights difficult engrossed it, sportsmen. Interested has all
+                            Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to
+                        </p>
+                        <span class="date date2">Jan 22, 2022</span>
+                    </div>
+                    <!-- card 6 -->
+                    <div class="blogs_cards">
+                        <div class="blog_poster">
+                            <img src="assets/images/blog/4by3/05.jpg" alt="">
+                            <span class="tag tag-technology ">
+                                <i class="fa-solid fa-tag"></i>
+                                Technology
+                            </span>
+                        </div>
+                        <h2 class="title">
+                            <span class="underline">12 worst types of business accounts you follow on Twitter
+                            </span>
+                        </h2>
+                        <p class="description">
+                            He moonlights difficult engrossed it, sportsmen. Interested has all
+                            Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to
+                        </p>
+                        <span class="date date2">Jan 22, 2022</span>
+                    </div>
+            </article>
+
+            <!-- aside bar content -->
+            <aside class="posts_aside">
+
+            </aside>
         </section>
-    </main>
 
-    <!--================== Footer ==================-->
-    <footer class="bg-dark text-light py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>About the Blog</h5>
-                    <p>This is an educational blog for students to share ideas, polls, and news. Join our community
-                        today!</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <h5>Contact</h5>
-                    <p>Email: contact@vlogeducatif.com</p>
-                    <p>Phone: +123 456 7890</p>
+        <!--================== Footer ==================-->
+        <footer class="bg-dark text-light py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>About the Blog</h5>
+                        <p>This is an educational blog for students to share ideas, polls, and news. Join our community
+                            today!</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <h5>Contact</h5>
+                        <p>Email: contact@vlogeducatif.com</p>
+                        <p>Phone: +123 456 7890</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <!-- Scripts -->
-    <script src="assets/js/test.js"></script>
+        <!-- Scripts -->
+        <script src="assets/js/test.js"></script>
 </body>
 
 </html>
